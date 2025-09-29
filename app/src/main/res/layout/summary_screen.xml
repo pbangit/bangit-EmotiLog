@@ -7,14 +7,14 @@
     <ListView
         android:id="@+id/listViewSummary"
         android:layout_width="match_parent"
-        android:layout_height="628dp">
+        android:layout_height="701dp">
 
     </ListView>
 
     <Button
         android:id="@+id/backToMain"
         android:layout_width="400dp"
-        android:layout_height="100dp"
+        android:layout_height="50dp"
         android:text="Back to Main"></Button>
 
 </LinearLayout>
