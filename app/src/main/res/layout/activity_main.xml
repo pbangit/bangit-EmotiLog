@@ -92,9 +92,19 @@
 
     <Button
         android:id="@+id/summaryButton"
+        android:layout_width="129dp"
+        android:layout_height="62dp"
+        android:text="View Summary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/viewLogButton"
+        android:layout_width="129dp"
         android:layout_height="60dp"
-        android:layout_width="80dp"
-        android:text="View Summary" />
+        android:text="View Logs"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
     >
 
 </androidx.constraintlayout.widget.ConstraintLayout>

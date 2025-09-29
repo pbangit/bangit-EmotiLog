@@ -5,6 +5,7 @@ package com.example.bangit_emotilog;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.EventLog;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -17,7 +18,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
-    Button happyButton, sadButton, angryButton, tiredButton, shockedButton, celebrationButton, summaryButton;
+    Button happyButton, sadButton, angryButton, tiredButton, shockedButton, celebrationButton, summaryButton, viewLogButton;
 
     Button buttonViewLogs, buttonSummary;
 
@@ -54,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
         shockedButton = findViewById(R.id.shockedButton);
         celebrationButton = findViewById(R.id.celebrationButton);
         summaryButton = findViewById(R.id.summaryButton);
+        viewLogButton = findViewById(R.id.viewLogButton);
 
         happyButton.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -97,6 +99,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v){
                 startActivity(new Intent(MainActivity.this, SummaryScreen.class));
+            }
+        });
+        viewLogButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, EventLogScreen.class));
             }
         });
     }

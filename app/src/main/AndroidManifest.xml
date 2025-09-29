@@ -23,6 +23,7 @@
         </activity>
 
         <activity android:name=".SummaryScreen"/>
+        <activity android:name=".EventLogScreen"/>
     </application>
 
 </manifest>
