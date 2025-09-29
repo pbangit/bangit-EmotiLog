@@ -36,34 +36,32 @@ public class SummaryScreen extends AppCompatActivity {
         //https://www.geeksforgeeks.org/java/java-program-to-count-the-occurrence-of-each-character-in-a-string-using-hashmap/
 
         Map<String, Integer> todayCounts = new LinkedHashMap<>();
+        Map<String, Integer> totalCounts = new LinkedHashMap<>();
         int totalAllTime = logs.size();
         for (EmoticonLog log : logs) {
             String logDate = yearMonthDay.format(new Date(log.getTimeStamp()));
+            String emoji = log.getEmoji();
             if (logDate.equals(today) ) {
-                String emoji = log.getEmoji();
                 todayCounts.put(emoji, todayCounts.getOrDefault(emoji, 0) + 1);
             }
-        }
-
-
-        List<String> summaryItems = new ArrayList<>();
-        summaryItems.add("Today's count: ");
-        for (Map.Entry<String, Integer> entry : todayCounts.entrySet()) {
-            summaryItems.add(entry.getKey() + " logged today --> " + entry.getValue());
-        }
-
-        summaryItems.add("Total logs (all time) --> " + totalAllTime);
-
-        Map<String, Integer> totalCounts = new LinkedHashMap<>();
-        for(EmoticonLog log : logs) {
-            String emoji = log.getEmoji();
             totalCounts.put(emoji, totalCounts.getOrDefault(emoji, 0) + 1);
         }
-        summaryItems.add("");
-        summaryItems.add("All time counts per emoji: ");
-        for(Map.Entry<String, Integer> entry : totalCounts.entrySet()){
-            summaryItems.add(entry.getKey() + "total --> " + entry.getValue());
+
+        List<String> summaryItems = new ArrayList<>();
+        summaryItems.add("Today's summary: ");
+        for (Map.Entry<String, Integer> entry : todayCounts.entrySet()) {
+            int totalCount = totalCounts.get(entry.getKey());
+            summaryItems.add(entry.getKey() + " frequency = " + entry.getValue() + " all time = " + totalCount);
         }
+
+        summaryItems.add("Total logs (all time) = " + totalAllTime);
+
+
+//        summaryItems.add("");
+//        summaryItems.add("All time counts per emoji: ");
+//        for(Map.Entry<String, Integer> entry : totalCounts.entrySet()){
+//            summaryItems.add(entry.getKey() + "total --> " + entry.getValue());
+//        }
 
 
 
