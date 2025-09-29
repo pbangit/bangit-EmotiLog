@@ -24,7 +24,7 @@ public class EventLogScreen extends AppCompatActivity {
         List<EmoticonLog> logs = LogRepository.getLogs();
         List<String> logItems = new ArrayList<>();
         for (EmoticonLog log : logs) {
-            logItems.add(log.getEmoji() + "at" + log.getTimeStamp());
+            logItems.add(log.getEmoji() + " at " + log.getTimeStamp());
         }
 
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, logItems);

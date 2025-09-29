@@ -29,9 +29,6 @@ public class MainActivity extends AppCompatActivity {
 
         LogRepository.addLog(log);
 
-        android.widget.Toast.makeText(
-                this,"Logged" + emoji + "at" + timeStamp, Toast.LENGTH_SHORT
-        ).show();
     }
 
 
