@@ -21,9 +21,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".SummaryScreen"/>
-        <activity android:name=".EventLogScreen"/>
+        <activity android:name=".SummaryScreen" />
+        <activity
+            android:name=".eventlog.EventLogActivity"
+            android:exported="false" />
     </application>
 
 </manifest>

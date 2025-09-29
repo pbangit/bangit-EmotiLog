@@ -33,6 +33,8 @@ public class SummaryScreen extends AppCompatActivity {
         SimpleDateFormat yearMonthDay = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
         String today = yearMonthDay.format(new Date());
 
+        //https://www.geeksforgeeks.org/java/java-program-to-count-the-occurrence-of-each-character-in-a-string-using-hashmap/
+
         Map<String, Integer> todayCounts = new LinkedHashMap<>();
         int totalAllTime = logs.size();
         for (EmoticonLog log : logs) {
