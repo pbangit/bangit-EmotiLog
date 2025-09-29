@@ -34,11 +34,14 @@ public class SummaryScreen extends AppCompatActivity {
             }
             counts.put(emoji,counts.get(emoji) + 1);
         }
-        String[] summaryItems = new String[counts.size()];
+        String[] summaryItems = new String[counts.size() + 1];
         int i = 0;
+        int total = 0;
         for(Map.Entry<String, Integer> entry : counts.entrySet()){
             summaryItems[i++] = entry.getKey() + "-->" + entry.getValue();
+            total += entry.getValue();
         }
+        summaryItems[i] = "Total --> " + total;
 
         ArrayAdapter<String> adapter = new ArrayAdapter<>(
                 this, android.R.layout.simple_list_item_1,summaryItems
