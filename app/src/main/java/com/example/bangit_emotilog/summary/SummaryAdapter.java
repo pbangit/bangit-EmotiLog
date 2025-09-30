@@ -11,20 +11,15 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.bangit_emotilog.EmoticonLog;
 import com.example.bangit_emotilog.LogRepository;
 import com.example.bangit_emotilog.R;
-import com.example.bangit_emotilog.eventlog.EventLogAdapter;
 
-
-import org.w3c.dom.Text;
-
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.Locale;
 import java.util.Map;
 
 public class SummaryAdapter extends RecyclerView.Adapter<SummaryAdapter.ViewHolder> {
+    private static int TYPE_HEADER = 0;
+    private static int TYPE_ITEM = 1;
+
     private Map<String, Integer> todayCounts;
     private Map<String, Integer> totalCounts;
 
@@ -36,8 +31,15 @@ public class SummaryAdapter extends RecyclerView.Adapter<SummaryAdapter.ViewHold
     @NonNull
     @Override
     public SummaryAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.summary_grid_row, parent, false);
+        View view;
+
+        if (viewType == TYPE_HEADER) {
+            view = LayoutInflater.from(parent.getContext())
+                    .inflate(R.layout.summary_grid_header, parent, false);
+        } else {
+            view = LayoutInflater.from(parent.getContext())
+                    .inflate(R.layout.summary_grid_row, parent, false);
+        }
 
         return new SummaryAdapter.ViewHolder(view);
 
@@ -45,20 +47,26 @@ public class SummaryAdapter extends RecyclerView.Adapter<SummaryAdapter.ViewHold
 
     @Override
     public void onBindViewHolder(@NonNull SummaryAdapter.ViewHolder holder, int position) {
-        List<EmoticonLog> events = LogRepository.getLogs();
-        // Display logs from latest to earliest
-        // EmotionEvent event = events.get(events.size() - position - 1);
-        // Display logs from earliest to latest
-        List <String> keyList = new ArrayList<>(totalCounts.keySet());
-        String key = keyList.get(position);
-        holder.emojiColumn.setText(key);
-        holder.frequencyColumn.setText(todayCounts.get(key).toString());
-        holder.allTimeCountColumn.setText(totalCounts.get(key).toString());
+        if (position > 0) {
+            List<String> keyList = new ArrayList<>(totalCounts.keySet());
+            // Position 0 is the header when determining the type. But positions > 0 are
+            // indexes into the keylist so they must be turned to zero-based indexes.
+            String key = keyList.get(position - 1);
+            holder.emojiColumn.setText(key);
+            holder.frequencyColumn.setText(todayCounts.get(key).toString());
+            holder.allTimeCountColumn.setText(totalCounts.get(key).toString());
+        }
+        // else position 0 is the header so there's nothing to bind
     }
 
     @Override
     public int getItemCount() {
-        return totalCounts.keySet().size();
+        return totalCounts.keySet().size() + 1;
+    }
+
+    @Override
+    public int getItemViewType(int position) {
+        return (position == 0) ? TYPE_HEADER : TYPE_ITEM;
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
