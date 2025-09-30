@@ -21,13 +21,4 @@
         android:textAlignment="center"
         android:textSize="24sp" />
 
-    <TextView
-        android:id="@+id/allTimeCountColumn"
-        android:layout_width="40dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="Total Count"
-        android:textAlignment="center"
-        android:textSize="24sp" />
-
 </LinearLayout>

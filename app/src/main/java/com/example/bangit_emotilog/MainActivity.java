@@ -1,5 +1,3 @@
-//Sources: https://www.geeksforgeeks.org/java/java-program-to-count-the-occurrence-of-each-character-in-a-string-using-hashmap/
-//https://stackoverflow.com/questions/24610527/how-do-i-get-a-button-to-open-another-activity
 package com.example.bangit_emotilog;
 
 import android.content.Intent;
@@ -16,23 +14,20 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.bangit_emotilog.EmoticonLog;
+import com.example.bangit_emotilog.LogRepository;
 import com.example.bangit_emotilog.eventlog.EventLogActivity;
 import com.example.bangit_emotilog.summary.SummaryActivity;
 
+/**
+ * MainActivity is the starting screen of the app with emoticon buttons and buttons to get to other
+ * activities (like summary and logs).
+ * It uses the EmoticonButton to log emotion events.
+ *
+ * Resources:
+ * https://stackoverflow.com/questions/24610527/how-do-i-get-a-button-to-open-another-activity
+ */
 public class MainActivity extends AppCompatActivity {
-    Button happyButton, sadButton, angryButton, tiredButton, shockedButton, celebrationButton, summaryButton, viewLogButton;
-
-    Button buttonViewLogs, buttonSummary;
-
-    private void logEmoticon(String emoji){
-        String timeStamp = java.text.DateFormat.getDateTimeInstance().format(new java.util.Date());
-
-        EmoticonLog log = new EmoticonLog(emoji,timeStamp);
-
-        LogRepository.addLog(log);
-
-    }
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,10 +40,9 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        summaryButton = findViewById(R.id.summaryButton);
-        viewLogButton = findViewById(R.id.viewLogButton);
+        Button summaryButton = findViewById(R.id.summaryButton);
+        Button viewLogButton = findViewById(R.id.viewLogButton);
 
-        //https://stackoverflow.com/questions/24610527/how-do-i-get-a-button-to-open-another-activity
         summaryButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){

@@ -18,28 +18,25 @@ import java.util.Date;
 import java.util.List;
 
 
+/**
+ * EventLogAdapter creates the view holders for emoticon logs displayed in a recycler view.
+ * The date format is used to format the event timestamps.
+ */
 public class EventLogAdapter extends RecyclerView.Adapter<EventLogAdapter.ViewHolder> {
 
     private static SimpleDateFormat dateTimeFormat = new SimpleDateFormat("yyyy-MM-dd' 'HH:mm:ss");
-    private Resources resources;
-    private String packageName;
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.log_grid, parent, false);
-        resources = view.getContext().getResources();
-        packageName = view.getContext().getPackageName();
         return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         List<EmoticonLog> events = LogRepository.getLogs();
-        // Display logs from latest to earliest
-        // EmotionEvent event = events.get(events.size() - position - 1);
-        // Display logs from earliest to latest
         EmoticonLog event = events.get(position);
         holder.emotionColumn.setText(event.getEmoji());
         holder.timestampColumn.setText(dateTimeFormat.format(new Date(event.getTimeStamp())));

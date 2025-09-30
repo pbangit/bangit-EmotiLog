@@ -2,6 +2,7 @@ package com.example.bangit_emotilog.summary;
 
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -23,6 +24,14 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
+/**
+ * SummaryActivity is the class that displays the summary of today's events including the emoji frequency
+ * and total count.
+ * It queries the LogRepository for the list of events.
+ *
+ * Resource:
+ * https://www.geeksforgeeks.org/java/java-program-to-count-the-occurrence-of-each-character-in-a-string-using-hashmap/
+ */
 public class SummaryActivity extends AppCompatActivity {
 
     @Override
@@ -39,7 +48,6 @@ public class SummaryActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new GridLayoutManager(this, 1));
 
         Map<String, Integer> todayCounts = new LinkedHashMap<>();
-        Map<String, Integer> totalCounts = new LinkedHashMap<>();
         SimpleDateFormat yearMonthDay = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
 
         List<EmoticonLog> logs = LogRepository.getLogs();
@@ -50,10 +58,11 @@ public class SummaryActivity extends AppCompatActivity {
             if (logDate.equals(today) ) {
                 todayCounts.put(emoji, todayCounts.getOrDefault(emoji, 0) + 1);
             }
-            totalCounts.put(emoji, totalCounts.getOrDefault(emoji, 0) + 1);
         }
+        TextView totalCount = findViewById(R.id.totalCount);
+        totalCount.setText(Integer.toString(logs.size()));
 
-        SummaryAdapter adapter = new SummaryAdapter(todayCounts, totalCounts);
+        SummaryAdapter adapter = new SummaryAdapter(todayCounts);
         recyclerView.setAdapter(adapter);
 
         Button backToMain = findViewById(R.id.summaryToHome);
