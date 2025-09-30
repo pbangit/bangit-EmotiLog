@@ -13,6 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="How are you feeling today?"
+        android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -20,7 +21,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.356" />
 
-    <Button
+    <com.example.bangit_emotilog.EmoticonLogButton
         android:id="@+id/happyButton"
         android:layout_width="80dp"
         android:layout_height="60dp"
@@ -31,7 +32,7 @@
         app:layout_constraintEnd_toStartOf="@+id/tiredButton"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
+    <com.example.bangit_emotilog.EmoticonLogButton
         android:id="@+id/sadButton"
         android:layout_width="80dp"
         android:layout_height="60dp"
@@ -42,7 +43,7 @@
         app:layout_constraintEnd_toStartOf="@+id/happyButton"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
+    <com.example.bangit_emotilog.EmoticonLogButton
         android:id="@+id/angryButton"
         android:layout_width="80dp"
         android:layout_height="60dp"
@@ -53,7 +54,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
+    <com.example.bangit_emotilog.EmoticonLogButton
         android:id="@+id/tiredButton"
         android:layout_width="80dp"
         android:layout_height="60dp"
@@ -64,44 +65,75 @@
         app:layout_constraintEnd_toStartOf="@+id/angryButton"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
+
+    <com.example.bangit_emotilog.EmoticonLogButton
         android:id="@+id/shockedButton"
         android:layout_width="80dp"
         android:layout_height="60dp"
-        android:layout_marginEnd="12dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginBottom="260dp"
         android:text="😮"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/celebrationButton"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sadButton"
-        app:layout_constraintVertical_bias="0.058" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
-    <Button
+    <com.example.bangit_emotilog.EmoticonLogButton
         android:id="@+id/celebrationButton"
         android:layout_width="80dp"
         android:layout_height="60dp"
-        android:layout_marginEnd="216dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="260dp"
         android:text="🥳"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/happyButton"
-        app:layout_constraintVertical_bias="0.058" />
+        app:layout_constraintStart_toEndOf="@+id/happyButton" />
+
+    <com.example.bangit_emotilog.EmoticonLogButton
+        android:id="@+id/sickButton"
+        android:layout_width="80dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="260dp"
+        android:text="🤢"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/sadButton" />
+
+    <com.example.bangit_emotilog.EmoticonLogButton
+        android:id="@+id/boredButton"
+        android:layout_width="80dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="260dp"
+        android:text="🥱"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/sickButton" />
+
+
+    <com.example.bangit_emotilog.EmoticonLogButton
+        android:id="@+id/gratefulButton"
+        android:layout_width="80dp"
+        android:layout_height="60dp"
+        android:text="🤗"
+        android:textSize="30sp"
+        tools:layout_editor_absoluteX="26dp"
+        tools:layout_editor_absoluteY="491dp" />
 
     <Button
         android:id="@+id/summaryButton"
-        android:layout_width="129dp"
-        android:layout_height="62dp"
+        android:layout_width="190dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="8dp"
         android:text="View Summary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/viewLogButton"
-        android:layout_width="129dp"
+        android:layout_width="190dp"
         android:layout_height="60dp"
+        android:layout_marginEnd="8dp"
         android:text="View Logs"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />

@@ -34,8 +34,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,53 +45,8 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        happyButton = findViewById(R.id.happyButton);
-        sadButton = findViewById(R.id.sadButton);
-        angryButton = findViewById(R.id.angryButton);
-        tiredButton = findViewById(R.id.tiredButton);
-        shockedButton = findViewById(R.id.shockedButton);
-        celebrationButton = findViewById(R.id.celebrationButton);
         summaryButton = findViewById(R.id.summaryButton);
         viewLogButton = findViewById(R.id.viewLogButton);
-
-        happyButton.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                logEmoticon("\uD83D\uDE01");
-            }
-        });
-        sadButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                logEmoticon("\uD83D\uDE14");
-            }
-        });
-        angryButton.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public  void onClick(View v){
-                logEmoticon("\uD83D\uDE21");
-            }
-        });
-        tiredButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                logEmoticon("😴");
-            }
-        });
-
-        shockedButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                logEmoticon("😮");
-            }
-        });
-
-        celebrationButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                logEmoticon("🥳");
-            }
-        });
 
         //https://stackoverflow.com/questions/24610527/how-do-i-get-a-button-to-open-another-activity
         summaryButton.setOnClickListener(new View.OnClickListener(){
