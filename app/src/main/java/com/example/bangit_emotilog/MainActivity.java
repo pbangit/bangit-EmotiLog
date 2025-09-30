@@ -17,6 +17,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.example.bangit_emotilog.eventlog.EventLogActivity;
+import com.example.bangit_emotilog.summary.SummaryActivity;
 
 public class MainActivity extends AppCompatActivity {
     Button happyButton, sadButton, angryButton, tiredButton, shockedButton, celebrationButton, summaryButton, viewLogButton;
@@ -98,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
         summaryButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                startActivity(new Intent(MainActivity.this, SummaryScreen.class));
+                startActivity(new Intent(MainActivity.this, SummaryActivity.class));
             }
         });
         viewLogButton.setOnClickListener(new View.OnClickListener() {
