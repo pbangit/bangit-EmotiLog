@@ -1,6 +1,5 @@
 package com.example.bangit_emotilog.eventlog;
 
-import android.content.res.Resources;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -39,7 +38,7 @@ public class EventLogAdapter extends RecyclerView.Adapter<EventLogAdapter.ViewHo
         List<EmoticonLog> events = LogRepository.getLogs();
         EmoticonLog event = events.get(position);
         holder.emotionColumn.setText(event.getEmoji());
-        holder.timestampColumn.setText(dateTimeFormat.format(new Date(event.getTimeStamp())));
+        holder.timestampColumn.setText(dateTimeFormat.format(new Date(event.getTimestamp())));
     }
 
     @Override

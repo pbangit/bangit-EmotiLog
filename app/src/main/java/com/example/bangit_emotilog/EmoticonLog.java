@@ -6,23 +6,23 @@ package com.example.bangit_emotilog;
  */
 public class EmoticonLog {
     private String emoji;
-    private String timeStamp;
+    private String timestamp;
 
-    public EmoticonLog(String emoji, String timeStamp){
+    public EmoticonLog(String emoji, String timestamp){
         this.emoji = emoji;
-        this.timeStamp = timeStamp;
+        this.timestamp = timestamp;
     }
 
     public String getEmoji() {
         return emoji;
     }
 
-    public String getTimeStamp() {
-        return timeStamp;
+    public String getTimestamp() {
+        return timestamp;
     }
 
     @Override
     public String toString(){
-        return timeStamp + "-" + emoji;
+        return timestamp + "-" + emoji;
     }
 }

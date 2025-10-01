@@ -24,7 +24,7 @@ public class LogRepository {
         List<EmoticonLog> logsOnDate = new ArrayList<>();
         String requestedDate = yearMonthDay.format(new Date());
         for (EmoticonLog log : getLogs()) {
-            String logDate = yearMonthDay.format(new Date(log.getTimeStamp()));
+            String logDate = yearMonthDay.format(new Date(log.getTimestamp()));
             if (logDate.equals(requestedDate) ) {
                 logsOnDate.add(log);
             }

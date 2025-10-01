@@ -20,9 +20,9 @@ public class EmoticonLogButton extends AppCompatButton {
     protected String emoji;
 
     private void logEmoticon(){
-        String timeStamp = java.text.DateFormat.getDateTimeInstance().format(new java.util.Date());
+        String timestamp = java.text.DateFormat.getDateTimeInstance().format(new java.util.Date());
 
-        EmoticonLog log = new EmoticonLog(emoji,timeStamp);
+        EmoticonLog log = new EmoticonLog(emoji, timestamp);
 
         LogRepository.addLog(log);
     }
