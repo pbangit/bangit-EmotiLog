@@ -31,7 +31,7 @@ public class SummaryAdapter extends RecyclerView.Adapter<SummaryAdapter.ViewHold
 
     @NonNull
     @Override
-    public SummaryAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view;
 
         if (viewType == TYPE_HEADER) {
@@ -47,7 +47,7 @@ public class SummaryAdapter extends RecyclerView.Adapter<SummaryAdapter.ViewHold
     }
 
     @Override
-    public void onBindViewHolder(@NonNull SummaryAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         if (position > 0) {
             List<String> keyList = new ArrayList<>(todayCounts.keySet());
             // Position 0 is the header when determining the type. But positions > 0 are
