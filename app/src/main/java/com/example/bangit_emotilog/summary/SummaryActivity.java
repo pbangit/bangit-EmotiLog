@@ -24,7 +24,9 @@ import java.util.Map;
 /**
  * SummaryActivity is the class that displays the summary of today's events including the emoji frequency
  * and total count.
- * It queries the LogRepository for the list of events.
+ * It queries the LogRepository for the list of events for the current date.
+ *
+ * Limitation: somewhat responsive if there are only a few emotions logged for the day.
  *
  * Resource:
  * https://www.geeksforgeeks.org/java/java-program-to-count-the-occurrence-of-each-character-in-a-string-using-hashmap/

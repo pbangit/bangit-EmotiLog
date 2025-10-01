@@ -19,6 +19,9 @@ import com.example.bangit_emotilog.summary.SummaryActivity;
  * activities (like summary and logs).
  * It uses the EmoticonButton to log emotion events.
  *
+ * Limitation: The UI is not responsive. A better way to implement this would be to use recyclerview
+ * that adjusts the number of columns based on the available width of the screen.
+ *
  * Resources:
  * https://stackoverflow.com/questions/24610527/how-do-i-get-a-button-to-open-another-activity
  */
