@@ -1,14 +1,14 @@
 package com.example.bangit_emotilog;
 
 /**
- * EmoticonLog represents a user's feeling at a specific date and time.
+ * EmoticonEvent represents a user's feeling at a specific date and time.
  * It only has getters because the emotion and time cannot change once logged.
  */
-public class EmoticonLog {
+public class EmoticonEvent {
     private String emoji;
     private String timestamp;
 
-    public EmoticonLog(String emoji, String timestamp){
+    public EmoticonEvent(String emoji, String timestamp){
         this.emoji = emoji;
         this.timestamp = timestamp;
     }
@@ -19,10 +19,5 @@ public class EmoticonLog {
 
     public String getTimestamp() {
         return timestamp;
-    }
-
-    @Override
-    public String toString(){
-        return timestamp + "-" + emoji;
     }
 }

@@ -11,19 +11,19 @@ import java.util.Locale;
  * or only events on a given date.
  */
 public class LogRepository {
-    private static List<EmoticonLog> logs = new ArrayList<>();
-    public static void addLog(EmoticonLog log){
-        logs.add(log);
+    private static List<EmoticonEvent> logs = new ArrayList<>();
+    public static void add(EmoticonEvent event){
+        logs.add(event);
     }
-    public static List<EmoticonLog> getLogs(){
+    public static List<EmoticonEvent> getLogs(){
         return logs;
     }
 
-    public static List<EmoticonLog> getLogs(Date date) {
+    public static List<EmoticonEvent> getLogs(Date date) {
         SimpleDateFormat yearMonthDay = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
-        List<EmoticonLog> logsOnDate = new ArrayList<>();
+        List<EmoticonEvent> logsOnDate = new ArrayList<>();
         String requestedDate = yearMonthDay.format(new Date());
-        for (EmoticonLog log : getLogs()) {
+        for (EmoticonEvent log : getLogs()) {
             String logDate = yearMonthDay.format(new Date(log.getTimestamp()));
             if (logDate.equals(requestedDate) ) {
                 logsOnDate.add(log);

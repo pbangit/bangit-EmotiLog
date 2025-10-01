@@ -8,7 +8,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.bangit_emotilog.EmoticonLog;
+import com.example.bangit_emotilog.EmoticonEvent;
 import com.example.bangit_emotilog.LogRepository;
 import com.example.bangit_emotilog.R;
 
@@ -35,8 +35,8 @@ public class EventLogAdapter extends RecyclerView.Adapter<EventLogAdapter.ViewHo
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        List<EmoticonLog> events = LogRepository.getLogs();
-        EmoticonLog event = events.get(position);
+        List<EmoticonEvent> events = LogRepository.getLogs();
+        EmoticonEvent event = events.get(position);
         holder.emotionColumn.setText(event.getEmoji());
         holder.timestampColumn.setText(dateTimeFormat.format(new Date(event.getTimestamp())));
     }

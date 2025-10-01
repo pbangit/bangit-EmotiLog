@@ -2,11 +2,8 @@ package com.example.bangit_emotilog;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.EventLog;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,8 +11,6 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-import com.example.bangit_emotilog.EmoticonLog;
-import com.example.bangit_emotilog.LogRepository;
 import com.example.bangit_emotilog.eventlog.EventLogActivity;
 import com.example.bangit_emotilog.summary.SummaryActivity;
 

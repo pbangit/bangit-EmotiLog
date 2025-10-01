@@ -12,7 +12,7 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.bangit_emotilog.EmoticonLog;
+import com.example.bangit_emotilog.EmoticonEvent;
 import com.example.bangit_emotilog.LogRepository;
 import com.example.bangit_emotilog.R;
 
@@ -46,9 +46,9 @@ public class SummaryActivity extends AppCompatActivity {
 
         Map<String, Integer> todayCounts = new LinkedHashMap<>();
         Date currentDate = new Date();
-        List<EmoticonLog> logs = LogRepository.getLogs(currentDate);
+        List<EmoticonEvent> logs = LogRepository.getLogs(currentDate);
 
-        for (EmoticonLog log : logs) {
+        for (EmoticonEvent log : logs) {
             String emoji = log.getEmoji();
             todayCounts.put(emoji, todayCounts.getOrDefault(emoji, 0) + 1);
         }
