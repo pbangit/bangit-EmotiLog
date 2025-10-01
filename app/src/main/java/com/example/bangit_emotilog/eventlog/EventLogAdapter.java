@@ -8,8 +8,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.bangit_emotilog.EmoticonEvent;
-import com.example.bangit_emotilog.LogRepository;
+import com.example.bangit_emotilog.logging.EmoticonEvent;
+import com.example.bangit_emotilog.logging.LogRepository;
 import com.example.bangit_emotilog.R;
 
 import java.text.SimpleDateFormat;

@@ -21,7 +21,7 @@
         app:layout_constraintVertical_bias="0.081" />
 
 
-    <com.example.bangit_emotilog.EmoticonLogButton
+    <com.example.bangit_emotilog.logging.EmoticonLogButton
         android:id="@+id/happyButton"
         android:layout_width="100dp"
         android:layout_height="90dp"
@@ -32,7 +32,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
-    <com.example.bangit_emotilog.EmoticonLogButton
+    <com.example.bangit_emotilog.logging.EmoticonLogButton
         android:id="@+id/sadButton"
         android:layout_width="100dp"
         android:layout_height="90dp"
@@ -44,7 +44,7 @@
         app:layout_constraintStart_toStartOf="@+id/celebrationButton"
         app:layout_constraintTop_toTopOf="@+id/angryButton" />
 
-    <com.example.bangit_emotilog.EmoticonLogButton
+    <com.example.bangit_emotilog.logging.EmoticonLogButton
         android:id="@+id/angryButton"
         android:layout_width="100dp"
         android:layout_height="90dp"
@@ -55,7 +55,7 @@
         app:layout_constraintStart_toStartOf="@+id/gratefulButton"
         app:layout_constraintTop_toTopOf="@+id/shockedButton" />
 
-    <com.example.bangit_emotilog.EmoticonLogButton
+    <com.example.bangit_emotilog.logging.EmoticonLogButton
         android:id="@+id/tiredButton"
         android:layout_width="100dp"
         android:layout_height="90dp"
@@ -68,7 +68,7 @@
         app:layout_constraintStart_toStartOf="@+id/angryButton"
         app:layout_constraintTop_toTopOf="@+id/boredButton" />
 
-    <com.example.bangit_emotilog.EmoticonLogButton
+    <com.example.bangit_emotilog.logging.EmoticonLogButton
         android:id="@+id/shockedButton"
         android:layout_width="100dp"
         android:layout_height="90dp"
@@ -82,7 +82,7 @@
         app:layout_constraintStart_toStartOf="@+id/happyButton"
         app:layout_constraintTop_toBottomOf="@+id/happyButton" />
 
-    <com.example.bangit_emotilog.EmoticonLogButton
+    <com.example.bangit_emotilog.logging.EmoticonLogButton
         android:id="@+id/celebrationButton"
         android:layout_width="100dp"
         android:layout_height="90dp"
@@ -92,7 +92,7 @@
         app:layout_constraintStart_toEndOf="@+id/gratefulButton"
         app:layout_constraintTop_toTopOf="@+id/gratefulButton" />
 
-    <com.example.bangit_emotilog.EmoticonLogButton
+    <com.example.bangit_emotilog.logging.EmoticonLogButton
         android:id="@+id/sickButton"
         android:layout_width="100dp"
         android:layout_height="90dp"
@@ -104,7 +104,7 @@
         app:layout_constraintStart_toStartOf="@+id/sadButton"
         app:layout_constraintTop_toTopOf="@+id/tiredButton" />
 
-    <com.example.bangit_emotilog.EmoticonLogButton
+    <com.example.bangit_emotilog.logging.EmoticonLogButton
         android:id="@+id/boredButton"
         android:layout_width="100dp"
         android:layout_height="90dp"
@@ -117,7 +117,7 @@
         app:layout_constraintStart_toStartOf="@+id/shockedButton"
         app:layout_constraintTop_toBottomOf="@+id/shockedButton" />
 
-    <com.example.bangit_emotilog.EmoticonLogButton
+    <com.example.bangit_emotilog.logging.EmoticonLogButton
         android:id="@+id/gratefulButton"
         android:layout_width="100dp"
         android:layout_height="90dp"

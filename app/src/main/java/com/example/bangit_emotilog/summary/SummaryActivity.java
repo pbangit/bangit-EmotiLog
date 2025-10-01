@@ -12,8 +12,8 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.bangit_emotilog.EmoticonEvent;
-import com.example.bangit_emotilog.LogRepository;
+import com.example.bangit_emotilog.logging.EmoticonEvent;
+import com.example.bangit_emotilog.logging.LogRepository;
 import com.example.bangit_emotilog.R;
 
 import java.util.Date;

@@ -1,4 +1,4 @@
-package com.example.bangit_emotilog;
+package com.example.bangit_emotilog.logging;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;

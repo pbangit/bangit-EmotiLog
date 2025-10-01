@@ -1,4 +1,4 @@
-package com.example.bangit_emotilog;
+package com.example.bangit_emotilog.logging;
 
 /**
  * EmoticonEvent represents a user's feeling at a specific date and time.
