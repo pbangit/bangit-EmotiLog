@@ -31,8 +31,4 @@ public class LogRepository {
         }
         return logsOnDate;
     }
-
-    public static void clearLogs(){
-        logs.clear();
-    }
 }
