@@ -15,13 +15,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.bangit_emotilog.EmoticonLog;
 import com.example.bangit_emotilog.LogRepository;
 import com.example.bangit_emotilog.R;
-import com.example.bangit_emotilog.eventlog.EventLogAdapter;
 
-import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.Locale;
 import java.util.Map;
 
 /**
@@ -48,16 +45,12 @@ public class SummaryActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new GridLayoutManager(this, 1));
 
         Map<String, Integer> todayCounts = new LinkedHashMap<>();
-        SimpleDateFormat yearMonthDay = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
+        Date currentDate = new Date();
+        List<EmoticonLog> logs = LogRepository.getLogs(currentDate);
 
-        List<EmoticonLog> logs = LogRepository.getLogs();
-        String today = yearMonthDay.format(new Date());
         for (EmoticonLog log : logs) {
-            String logDate = yearMonthDay.format(new Date(log.getTimeStamp()));
             String emoji = log.getEmoji();
-            if (logDate.equals(today) ) {
-                todayCounts.put(emoji, todayCounts.getOrDefault(emoji, 0) + 1);
-            }
+            todayCounts.put(emoji, todayCounts.getOrDefault(emoji, 0) + 1);
         }
         TextView totalCount = findViewById(R.id.totalCount);
         totalCount.setText(Integer.toString(logs.size()));

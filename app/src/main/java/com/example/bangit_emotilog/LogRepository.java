@@ -1,13 +1,14 @@
 package com.example.bangit_emotilog;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 /**
- * LogRepository stores different events in an ordered list.
- * Currently only supports queries for the entire list. If more activities require filtering by a
- * date, like in SummaryActivity, then the function could be added into here.
- * Decided to limit LogRepository to returning entire list.
+ * LogRepository stores different events in an ordered list. It allows queries for all events
+ * or only events on a given date.
  */
 public class LogRepository {
     private static List<EmoticonLog> logs = new ArrayList<>();
@@ -16,6 +17,19 @@ public class LogRepository {
     }
     public static List<EmoticonLog> getLogs(){
         return logs;
+    }
+
+    public static List<EmoticonLog> getLogs(Date date) {
+        SimpleDateFormat yearMonthDay = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
+        List<EmoticonLog> logsOnDate = new ArrayList<>();
+        String requestedDate = yearMonthDay.format(new Date());
+        for (EmoticonLog log : getLogs()) {
+            String logDate = yearMonthDay.format(new Date(log.getTimeStamp()));
+            if (logDate.equals(requestedDate) ) {
+                logsOnDate.add(log);
+            }
+        }
+        return logsOnDate;
     }
 
     public static void clearLogs(){
